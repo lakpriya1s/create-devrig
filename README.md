@@ -24,8 +24,9 @@ npx create-devrig my-project
 That's it. This one command:
 
 1. **Fetches** the [devrig](https://github.com/lakpriya1s/devrig) template into `my-project/` — no git history, just the files.
-2. **Initializes** a fresh git repository there.
-3. **Launches** devrig's interactive setup wizard immediately, so you configure your project name, GitHub org, repos, issue tracker, and feature toggles in the same command — no separate `cd` + edit-a-config-file + run-setup steps.
+2. **Strips** devrig's own repo furniture (branding assets, translated docs, `CITATION.cff`, `CONTRIBUTING.md`, `LICENSE`) so the workspace starts clean — it's your project, not devrig's.
+3. **Initializes** a fresh git repository there.
+4. **Launches** devrig's interactive setup wizard immediately, so you configure your project name, description, GitHub org, repos, issue tracker, and feature toggles in the same command — the wizard also generates a `README.md` for *your* project in place of devrig's.
 
 Omit the directory and you'll be prompted for one:
 
@@ -43,7 +44,7 @@ npx create-devrig
 
 ## What this package does *not* do
 
-It doesn't reimplement any of devrig's setup logic — it only fetches the template and hands off to its own `setup.sh`. Updates to devrig's setup flow, skills, or config schema take effect automatically the next time someone runs `npx create-devrig`; this package itself rarely needs to change.
+It doesn't reimplement any of devrig's setup logic — it only fetches the template, trims the template-only files, and hands off to its own `setup.sh` (which trims them too, so the GitHub "Use this template" path ends up identical). Updates to devrig's setup flow, skills, or config schema take effect automatically the next time someone runs `npx create-devrig`; this package itself rarely needs to change.
 
 ## Prefer not to use npx?
 

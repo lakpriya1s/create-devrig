@@ -1,19 +1,26 @@
 #!/usr/bin/env node
-import { existsSync, readdirSync, chmodSync } from "node:fs";
+import { existsSync, readdirSync, chmodSync, rmSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { spawn, spawnSync } from "node:child_process";
 import readline from "node:readline/promises";
 import { stdin, stdout } from "node:process";
 
 const REPO = "lakpriya1s/devrig";
+
+// Files that belong to the devrig template's own repo (branding, translated
+// docs, license/citation), not to a scaffolded workspace. Removed after the
+// clone; setup.sh removes them too for the GitHub "Use this template" path.
+const TEMPLATE_ONLY_FILES = ["docs", "assets", "CITATION.cff", "CONTRIBUTING.md", "LICENSE"];
+
 const HELP = `
 create-devrig — scaffold a devrig multi-repo AI dev workspace
 
 Usage:
   npx create-devrig [directory]
 
-Fetches the devrig template (no git history), makes the target directory
-its own git repo, and launches its interactive setup wizard.
+Fetches the devrig template (no git history), strips the template's own
+branding/docs, makes the target directory its own git repo, and launches
+its interactive setup wizard.
 
 Options:
   -h, --help   Show this help
@@ -72,6 +79,10 @@ async function main() {
     await emitter.clone(dest);
   } catch (err) {
     fail(`Failed to fetch the template: ${err.message}`);
+  }
+
+  for (const rel of TEMPLATE_ONLY_FILES) {
+    rmSync(join(dest, rel), { recursive: true, force: true });
   }
 
   if (!existsSync(join(dest, ".git"))) {
