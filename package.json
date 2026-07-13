@@ -1,6 +1,6 @@
 {
   "name": "create-devrig",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Scaffold a devrig multi-repo AI dev workspace: fetches the template and launches its interactive setup.",
   "type": "module",
   "bin": {
