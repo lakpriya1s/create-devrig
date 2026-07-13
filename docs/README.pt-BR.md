@@ -24,8 +24,9 @@ npx create-devrig my-project
 Só isso. Esse único comando:
 
 1. **Busca** o template [devrig](https://github.com/lakpriya1s/devrig) em `my-project/` — sem histórico de git, só os arquivos.
-2. **Inicializa** um repositório git novo ali.
-3. **Lança** o assistente de configuração interativo do devrig imediatamente, para você configurar o nome do projeto, a organização do GitHub, os repos, o gestor de tickets e os toggles de funcionalidades no mesmo comando — sem os passos separados de `cd` + editar um arquivo de config + rodar o setup.
+2. **Remove** os arquivos próprios do template devrig (assets de marca, docs traduzidos, `CITATION.cff`, `CONTRIBUTING.md`, `LICENSE`) para que o workspace comece limpo — é o seu projeto, não o do devrig.
+3. **Inicializa** um repositório git novo ali.
+4. **Lança** o assistente de configuração interativo do devrig imediatamente, para você configurar o nome do projeto, a descrição, a organização do GitHub, os repos, o gestor de tickets e os toggles de funcionalidades no mesmo comando — o assistente também gera um `README.md` para *seu* projeto no lugar do do devrig.
 
 Se você omitir o diretório, será perguntado por um:
 
@@ -43,7 +44,7 @@ npx create-devrig
 
 ## O que este pacote *não* faz
 
-Ele não reimplementa nenhuma lógica de configuração do devrig — só busca o template e passa para o próprio `setup.sh` dele. Atualizações no fluxo de setup, nas skills, ou no esquema de config do devrig entram em vigor automaticamente na próxima vez que alguém rodar `npx create-devrig`; este pacote em si quase nunca precisa mudar.
+Ele não reimplementa nenhuma lógica de configuração do devrig — só busca o template, remove os arquivos próprios do template, e passa para o próprio `setup.sh` dele (que também os remove, então o caminho do GitHub "Use this template" fica idêntico). Atualizações no fluxo de setup, nas skills, ou no esquema de config do devrig entram em vigor automaticamente na próxima vez que alguém rodar `npx create-devrig`; este pacote em si quase nunca precisa mudar.
 
 ## Prefere não usar npx?
 

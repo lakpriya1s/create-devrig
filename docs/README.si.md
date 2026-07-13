@@ -24,8 +24,9 @@ npx create-devrig my-project
 ඒ තරම්ම. මෙම command එකෙන්:
 
 1. [devrig](https://github.com/lakpriya1s/devrig) template එක `my-project/` වෙත **fetch** කරයි — git history නොමැතිව, ගොනු පමණයි.
-2. එහි නව git repository එකක් **initialize** කරයි.
-3. devrig හි interactive setup wizard එක වහාම **launch** කරයි, එවිට ඔබට ව්‍යාපෘති නම, GitHub org, repos, issue tracker, සහ feature toggles එකම command එකේදී සකසා ගත හැක — වෙනම `cd` + config file සංස්කරණය + setup ධාවනය කිරීමේ පියවර අවශ්‍ය නොවේ.
+2. devrig හි own template files (branding assets, translated docs, `CITATION.cff`, `CONTRIBUTING.md`, `LICENSE`) **ඉවත් කරයි**, එවිට workspace එක පිරිසිදුව ආරම්භ වේ — මෙය devrig ගේ නොව ඔබේ ව්‍යාපෘතියයි.
+3. එහි නව git repository එකක් **initialize** කරයි.
+4. devrig හි interactive setup wizard එක වහාම **launch** කරයි, එවිට ඔබට ව්‍යාපෘති නම, විස්තරය, GitHub org, repos, issue tracker, සහ feature toggles එකම command එකේදී සකසා ගත හැක — wizard එක devrig ගේ වෙනුවට *ඔබේ* ව්‍යාපෘතිය සඳහා `README.md` එකක්ද සාදයි.
 
 Directory එක අත්හැරියොත් ඔබෙන් අසනු ලැබේ:
 
@@ -43,7 +44,7 @@ npx create-devrig
 
 ## මෙම package එක *නොකරන* දේ
 
-එය devrig හි setup logic නැවත implement නොකරයි — එය template එක fetch කර එහි own `setup.sh` වෙත භාර දෙයි. devrig හි setup flow, skills, හෝ config schema යාවත්කාලීන වූ විට, ඊළඟට කවුරුන් හෝ `npx create-devrig` ධාවනය කරන විට ඒවා ස්වයංක්‍රීයව ක්‍රියාත්මක වේ; මෙම package එකට වෙනස් කිරීමට කලාතුරකින් අවශ්‍ය වේ.
+එය devrig හි setup logic නැවත implement නොකරයි — එය template එක fetch කර, template-only files ඉවත් කර, එහි own `setup.sh` වෙත භාර දෙයි (එයද ඒවා ඉවත් කරන බැවින්, GitHub "Use this template" මාර්ගයද එකම ප්‍රතිඵලයක් ලබා දේ). devrig හි setup flow, skills, හෝ config schema යාවත්කාලීන වූ විට, ඊළඟට කවුරුන් හෝ `npx create-devrig` ධාවනය කරන විට ඒවා ස්වයංක්‍රීයව ක්‍රියාත්මක වේ; මෙම package එකට වෙනස් කිරීමට කලාතුරකින් අවශ්‍ය වේ.
 
 ## npx භාවිත කිරීමට අකමැතිද?
 

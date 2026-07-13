@@ -24,8 +24,9 @@ npx create-devrig my-project
 Y ya está. Este único comando:
 
 1. **Descarga** la plantilla [devrig](https://github.com/lakpriya1s/devrig) en `my-project/` — sin historial de git, solo los archivos.
-2. **Inicializa** un repositorio git nuevo ahí mismo.
-3. **Lanza** el asistente de configuración interactivo de devrig de inmediato, para que configures el nombre del proyecto, la organización de GitHub, los repos, el gestor de tickets y los toggles de funciones en el mismo comando — sin los pasos separados de `cd` + editar un archivo de configuración + ejecutar el setup.
+2. **Elimina** los archivos propios de la plantilla devrig (recursos de marca, docs traducidos, `CITATION.cff`, `CONTRIBUTING.md`, `LICENSE`) para que el workspace empiece limpio — es tu proyecto, no el de devrig.
+3. **Inicializa** un repositorio git nuevo ahí mismo.
+4. **Lanza** el asistente de configuración interactivo de devrig de inmediato, para que configures el nombre del proyecto, la descripción, la organización de GitHub, los repos, el gestor de tickets y los toggles de funciones en el mismo comando — el asistente también genera un `README.md` para *tu* proyecto en lugar del de devrig.
 
 Si omites el directorio, se te pedirá uno:
 
@@ -43,7 +44,7 @@ npx create-devrig
 
 ## Lo que este paquete *no* hace
 
-No reimplementa nada de la lógica de configuración de devrig — solo descarga la plantilla y se la entrega a su propio `setup.sh`. Las actualizaciones al flujo de configuración, las skills o el esquema de configuración de devrig surten efecto automáticamente la próxima vez que alguien ejecute `npx create-devrig`; este paquete en sí casi nunca necesita cambiar.
+No reimplementa nada de la lógica de configuración de devrig — solo descarga la plantilla, recorta los archivos propios de la plantilla, y se la entrega a su propio `setup.sh` (que también los recorta, así que la ruta de GitHub "Use this template" termina igual). Las actualizaciones al flujo de configuración, las skills o el esquema de configuración de devrig surten efecto automáticamente la próxima vez que alguien ejecute `npx create-devrig`; este paquete en sí casi nunca necesita cambiar.
 
 ## ¿Prefieres no usar npx?
 

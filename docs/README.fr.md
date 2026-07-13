@@ -24,8 +24,9 @@ npx create-devrig my-project
 C'est tout. Cette seule commande :
 
 1. **Récupère** le template [devrig](https://github.com/lakpriya1s/devrig) dans `my-project/` — sans historique git, juste les fichiers.
-2. **Initialise** un nouveau dépôt git sur place.
-3. **Lance** l'assistant de configuration interactif de devrig immédiatement, pour que vous configuriez le nom du projet, l'organisation GitHub, les dépôts, le gestionnaire de tickets et les options en une seule commande — sans les étapes séparées de `cd` + édition d'un fichier de config + exécution du setup.
+2. **Supprime** les fichiers propres au template devrig (assets de marque, docs traduites, `CITATION.cff`, `CONTRIBUTING.md`, `LICENSE`) pour que le workspace démarre propre — c'est votre projet, pas celui de devrig.
+3. **Initialise** un nouveau dépôt git sur place.
+4. **Lance** l'assistant de configuration interactif de devrig immédiatement, pour que vous configuriez le nom du projet, la description, l'organisation GitHub, les dépôts, le gestionnaire de tickets et les options en une seule commande — l'assistant génère aussi un `README.md` pour *votre* projet à la place de celui de devrig.
 
 Si vous omettez le répertoire, on vous en demandera un :
 
@@ -43,7 +44,7 @@ npx create-devrig
 
 ## Ce que ce paquet ne fait *pas*
 
-Il ne réimplémente aucune logique de configuration de devrig — il ne fait que récupérer le template et le transmettre à son propre `setup.sh`. Les mises à jour du flux de configuration, des skills ou du schéma de config de devrig prennent effet automatiquement la prochaine fois que quelqu'un exécute `npx create-devrig` ; ce paquet lui-même a rarement besoin de changer.
+Il ne réimplémente aucune logique de configuration de devrig — il ne fait que récupérer le template, retirer les fichiers propres au template, et le transmettre à son propre `setup.sh` (qui les retire aussi, donc le chemin GitHub « Use this template » aboutit au même résultat). Les mises à jour du flux de configuration, des skills ou du schéma de config de devrig prennent effet automatiquement la prochaine fois que quelqu'un exécute `npx create-devrig` ; ce paquet lui-même a rarement besoin de changer.
 
 ## Vous préférez ne pas utiliser npx ?
 

@@ -24,8 +24,9 @@ npx create-devrig my-project
 बस इतना ही। यह एक कमांड:
 
 1. [devrig](https://github.com/lakpriya1s/devrig) टेम्पलेट को `my-project/` में **fetch** करती है — git history के बिना, सिर्फ फ़ाइलें।
-2. वहाँ एक नया git repository **initialize** करती है।
-3. devrig का इंटरैक्टिव setup wizard तुरंत **launch** करती है, ताकि आप प्रोजेक्ट नाम, GitHub org, repos, issue tracker, और feature toggles उसी command में सेट कर सकें — अलग से `cd` + config फ़ाइल एडिट + setup चलाने की ज़रूरत नहीं।
+2. devrig के अपने टेम्पलेट फ़ाइलों (branding assets, translated docs, `CITATION.cff`, `CONTRIBUTING.md`, `LICENSE`) को **हटाती** है, ताकि workspace साफ़ शुरू हो — यह आपका प्रोजेक्ट है, devrig का नहीं।
+3. वहाँ एक नया git repository **initialize** करती है।
+4. devrig का इंटरैक्टिव setup wizard तुरंत **launch** करती है, ताकि आप प्रोजेक्ट नाम, विवरण, GitHub org, repos, issue tracker, और feature toggles उसी command में सेट कर सकें — wizard *आपके* प्रोजेक्ट के लिए devrig की जगह एक `README.md` भी जनरेट करता है।
 
 Directory न दें तो आपसे पूछा जाएगा:
 
@@ -43,7 +44,7 @@ npx create-devrig
 
 ## यह package क्या *नहीं* करता
 
-यह devrig के setup logic को दोबारा implement नहीं करता — यह सिर्फ टेम्पलेट fetch करता है और उसे उसके अपने `setup.sh` को सौंप देता है। devrig के setup flow, skills, या config schema में अपडेट अगली बार कोई `npx create-devrig` चलाने पर अपने आप लागू हो जाते हैं; यह package खुद शायद ही कभी बदलने की ज़रूरत पड़े।
+यह devrig के setup logic को दोबारा implement नहीं करता — यह सिर्फ टेम्पलेट fetch करता है, टेम्पलेट-केवल फ़ाइलें हटाता है, और उसे उसके अपने `setup.sh` को सौंप देता है (जो उन्हें भी हटाता है, ताकि GitHub का "Use this template" तरीका भी वैसा ही नतीजा दे)। devrig के setup flow, skills, या config schema में अपडेट अगली बार कोई `npx create-devrig` चलाने पर अपने आप लागू हो जाते हैं; यह package खुद शायद ही कभी बदलने की ज़रूरत पड़े।
 
 ## npx इस्तेमाल नहीं करना चाहते?
 

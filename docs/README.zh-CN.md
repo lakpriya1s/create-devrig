@@ -24,8 +24,9 @@ npx create-devrig my-project
 就这样。这一条命令会：
 
 1. **拉取** [devrig](https://github.com/lakpriya1s/devrig) 模板到 `my-project/` — 不含 git 历史，只有文件。
-2. **初始化** 一个全新的 git 仓库。
-3. **启动** devrig 的交互式安装向导，让你在同一条命令中配置项目名、GitHub 组织、仓库列表、工单系统和功能开关 — 无需再分开执行 `cd` + 编辑配置文件 + 运行安装的步骤。
+2. **删除** devrig 自身的模板文件（品牌资源、翻译文档、`CITATION.cff`、`CONTRIBUTING.md`、`LICENSE`），让工作区从一开始就是干净的 — 这是你的项目，不是 devrig 的。
+3. **初始化** 一个全新的 git 仓库。
+4. **启动** devrig 的交互式安装向导，让你在同一条命令中配置项目名、描述、GitHub 组织、仓库列表、工单系统和功能开关 — 向导还会为*你的*项目生成一份 `README.md`，取代 devrig 自己的。
 
 省略目录参数，系统会提示你输入：
 
@@ -43,7 +44,7 @@ npx create-devrig
 
 ## 这个包*不*做什么
 
-它不会重新实现 devrig 的任何安装逻辑 — 只负责拉取模板并交给它自己的 `setup.sh`。devrig 的安装流程、技能或配置结构一旦更新，下次运行 `npx create-devrig` 时会自动生效；这个包本身很少需要改动。
+它不会重新实现 devrig 的任何安装逻辑 — 只负责拉取模板、删除模板专属文件，并交给它自己的 `setup.sh`（`setup.sh` 也会删除这些文件，因此 GitHub 的 "Use this template" 路径结果完全一致）。devrig 的安装流程、技能或配置结构一旦更新，下次运行 `npx create-devrig` 时会自动生效；这个包本身很少需要改动。
 
 ## 不想用 npx？
 
