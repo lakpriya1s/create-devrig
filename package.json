@@ -1,0 +1,33 @@
+{
+  "name": "create-devrig",
+  "version": "1.0.0",
+  "description": "Scaffold a devrig multi-repo AI dev workspace: fetches the template and launches its interactive setup.",
+  "type": "module",
+  "bin": {
+    "create-devrig": "./index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "author": "Lakpriya Senevirathna",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lakpriya1s/create-devrig"
+  },
+  "keywords": [
+    "devrig",
+    "scaffold",
+    "template",
+    "ai",
+    "claude-code",
+    "workspace",
+    "mcp"
+  ],
+  "dependencies": {
+    "degit": "^2.8.4"
+  }
+}
