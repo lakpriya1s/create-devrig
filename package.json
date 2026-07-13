@@ -4,7 +4,7 @@
   "description": "Scaffold a devrig multi-repo AI dev workspace: fetches the template and launches its interactive setup.",
   "type": "module",
   "bin": {
-    "create-devrig": "./index.js"
+    "create-devrig": "index.js"
   },
   "files": [
     "index.js"
@@ -16,7 +16,7 @@
   "author": "Lakpriya Senevirathna",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lakpriya1s/create-devrig"
+    "url": "git+https://github.com/lakpriya1s/create-devrig.git"
   },
   "keywords": [
     "devrig",
